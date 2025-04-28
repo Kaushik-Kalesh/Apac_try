@@ -1,0 +1,99 @@
+/* ===========================
+   Sidebar and Main Page Colors
+============================= */
+[data-testid="stSidebar"] {
+    background-color: #0E0E0E !important; /* Sidebar background */
+}
+
+[data-testid="stAppViewContainer"] {
+    background-color: #0E0E0E; /* Main page background */
+}
+
+/* ===========================
+   Button Styles
+============================= */
+.stButton > button {
+    background-color: grey !important; /* Button color (highlighted in contrast) */
+    color: white !important;
+    border-radius: 8px;
+    border: 1px solid grey;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.stButton > button:hover {
+    background-color: grey !important;
+}
+
+/* ===========================
+   Text and Heading Styles
+============================= */
+h1, h2, h3, h4, h5, h6, p, label {
+    color: white !important;
+}
+
+/* ===========================
+   Text Area and Input Box
+============================= */
+.stTextArea > textarea {
+    background-color: #181818;
+    color: white;
+    border: 1px solid #333333;
+}
+
+/* ===========================
+   File Upload Area
+============================= */
+[data-testid="stFileDropzone"] {
+    background-color: #181818;
+    border: 2px dashed #333333;
+    color: white;
+}
+
+/* ===========================
+   Dropdown and Select Box
+============================= */
+div[data-baseweb="select"] > div {
+    background-color: #202020 !important;
+    color: white !important;
+}
+
+/* ===========================
+   Uploaded Image
+============================= */
+.stImage > img {
+    border: 2px solid #333333;
+    border-radius: 10px;
+}
+
+/* ===========================
+   General Button Styling
+============================= */
+div.stButton > button:first-child {
+    margin-top: 5px;
+}
+/* ===========================
+   Hide Streamlit Default Navbar
+============================= */
+header[data-testid="stHeader"] {
+    background-color: #0E0E0E !important; /* Same black as sidebar and main page */
+    color: white !important;
+}
+
+/* ===========================
+   Hide White Border on Top
+============================= */
+header[data-testid="stHeader"]::before {
+    background-color: #0E0E0E
+    text-color: aliceblue ;
+}
+
+/* ===========================
+   Hide the Deploy Button (Optional)
+============================= */
+button[kind="header"] {
+    display: none !important;
+}
+
