@@ -6,3 +6,4 @@ tensorflow
 Pillow
 pyperclip
 scikit-learn
+gdown
