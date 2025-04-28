@@ -12,15 +12,8 @@ import zipfile
 import pickle
 import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
+import gdown
 
-# ===========================
-# Install gdown if not already installed
-# ===========================
-try:
-    import gdown
-except ImportError:
-    os.system('pip install gdown')
-    import gdown
 
 # ===========================
 # Helper Functions
