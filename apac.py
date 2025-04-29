@@ -394,7 +394,7 @@ if input_choice == "Live Webcam":
                     break
 
         cap.release()
-        cv2.destroyAllWindows()
+        #cv2.destroyAllWindows()
 
     st.text_area("Final Translated Output", value=st.session_state.sentence,
                  height=150, key="final_sentence_output", disabled=True)
