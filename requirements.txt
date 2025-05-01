@@ -1,9 +1,0 @@
-streamlit
-opencv-python-headless
-numpy
-mediapipe
-tensorflow
-Pillow
-pyperclip
-scikit-learn
-gdown
