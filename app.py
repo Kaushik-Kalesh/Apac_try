@@ -11,8 +11,10 @@ import pickle
 import tensorflow as tf
 from werkzeug.utils import secure_filename
 import base64
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Configuration
 app.config['UPLOAD_FOLDER'] = 'static/images'
