@@ -17,3 +17,6 @@ app = "your-app-name"  # Change to your preferred app name
 [[mounts]]
   source = "uploaded_images"
   destination = "/app/static/images"
+
+[vm]
+  memory = "1024"
