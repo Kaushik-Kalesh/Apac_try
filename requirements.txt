@@ -1,12 +1,12 @@
 Flask==3.0.2
 numpy==1.26.4
-opencv-python==4.9.0.80
+opencv-python-headless==4.9.0.80  # Changed to headless version
 mediapipe==0.10.21
-tensorflow==2.16.1
+tensorflow-cpu==2.16.1  # Changed to CPU-only version
 Pillow==10.2.0
 pyperclip==1.8.2
 scikit-learn==1.4.1.post1
 gdown==4.7.1
 protobuf==4.25.3
-flask-cors
-gunicorn
+flask-cors==4.0.0  # Added version
+gunicorn==21.2.0  # Added version
