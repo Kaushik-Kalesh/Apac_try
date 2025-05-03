@@ -12,6 +12,7 @@ import tensorflow as tf
 from werkzeug.utils import secure_filename
 import base64
 from flask_cors import CORS
+from functools import lru_cache
 
 app = Flask(__name__)
 CORS(app)
@@ -33,13 +34,23 @@ tf.config.threading.set_intra_op_parallelism_threads(4)
 tf.config.threading.set_inter_op_parallelism_threads(4)
 
 # Enable GPU memory growth if available
-gpus = tf.config.experimental.list_physical_devices('GPU')
-if gpus:
-    try:
-        for gpu in gpus:
-            tf.config.experimental.set_memory_growth(gpu, True)
-    except RuntimeError as e:
-        print(e)
+if tf.config.list_physical_devices('GPU'):
+    tf.config.optimizer.set_jit(True)  # Enable XLA compilation if GPU available
+    tf.config.threading.set_intra_op_parallelism_threads(4)
+    tf.config.threading.set_inter_op_parallelism_threads(4)
+    # Enable GPU memory growth if available
+    gpus = tf.config.experimental.list_physical_devices('GPU')
+    if gpus:
+        try:
+            for gpu in gpus:
+                tf.config.experimental.set_memory_growth(gpu, True)
+        except RuntimeError as e:
+            print(e)
+else:
+    # CPU-only configuration
+    tf.config.threading.set_intra_op_parallelism_threads(2)
+    tf.config.threading.set_inter_op_parallelism_threads(2)
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Labels
 letter_labels = {i: chr(65 + i) for i in range(26)}  # A-Z
