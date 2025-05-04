@@ -10,6 +10,9 @@ ENV FLASK_ENV=production
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
+    libopencv-core-dev \
+    libopencv-imgproc-dev \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/*
 
 # Set work directory
